@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int ReadNumber() {
+	int Number;
+	cout << "Enter Your Number Plesse?\n";
+	cin >> Number;
+	return Number;
+}
+double CalcHalfOFNumber(int Number) {
+	return (double)Number / 2;
+}
+void Result(int Number) {
+	cout << "The Half OF " << Number << " is " << CalcHalfOFNumber(Number);
+}
+int main() {
+	int Number = ReadNumber();
+	Result(Number);
+}
