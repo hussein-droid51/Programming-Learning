@@ -1,0 +1,62 @@
+#include <iostream>   
+#include <cstdio>   
+#include <string> 
+
+using namespace std;  
+struct stInfo
+{
+	int Age;
+	bool HasDriverLicense;
+	bool HasRecommendation;
+};
+
+stInfo ReadInfo()
+{
+	stInfo Info;
+
+	    cout << "Do you have a recommendation? (1 for Yes, 0 for No)" << endl;
+	    cin >> Info.HasRecommendation;
+		if (Info.HasRecommendation)
+		{
+			
+			Info.Age = 0;
+			Info.HasDriverLicense = false;
+			return Info; 
+		}
+	    cout << "Enter your age ? " << endl;
+	    cin >> Info.Age;
+		cout << "Do you have a driver’s license ? (1 for Yes, 0 for No)" << endl;
+		cin >> Info.HasDriverLicense;
+		
+
+		return Info;
+};
+
+bool IsAccepted(stInfo Info)
+{
+	if (Info.HasRecommendation)
+		return true;
+	
+	else
+	     return (Info.Age >= 21 && Info.HasDriverLicense);
+};
+ 
+void PrintResult(stInfo Info)
+{
+	if (IsAccepted(Info))
+		cout << "Congratulations! You are accepted." << endl;
+
+	else
+		cout << "Sorry! You are not accepted." << endl;
+};
+
+
+
+
+int main()
+{
+
+	PrintResult(ReadInfo());
+	
+    return 0;  
+}
