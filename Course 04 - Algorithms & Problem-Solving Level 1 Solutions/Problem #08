@@ -1,0 +1,34 @@
+#include <iostream>
+#include<cmath>
+#include <string>
+using namespace std;
+enum en_Pass_Fail { Pass = 1, Fail = 2 };
+int Read_Mark()
+{
+	int Mark = 0;
+	
+	cout << "Please enter your mark?\n";
+	cin >> Mark;
+
+	return Mark;
+}
+en_Pass_Fail Check_Mark(int Mark)
+{
+	if (Mark >= 50)
+		return en_Pass_Fail::Pass;
+	else
+		return en_Pass_Fail::Fail;
+}
+void Print_Results(int Number)
+{
+	if (Check_Mark(Number) == 1)
+		cout << "Pass\n";
+	else
+		cout << "Fail\n";
+}
+int main()
+{
+	Print_Results(Read_Mark());
+	return 0;
+
+}
