@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+void ReadNumber(int &Num1, int &Num2 , int &Num3) {
+
+	cout << "Enter Number 1 Please ?\n";
+	cin >> Num1;
+	cout << "Enter Number 2 Please ?\n";
+	cin >> Num2; 
+	cout << "Enter Number 3 Please ?\n";
+	cin >> Num3;
+
+}
+int calcSum(int Num1, int Num2, int Num3) {
+	return Num1 + Num2 + Num3;
+	}
+void PrintTheValue(int Num1, int Num2, int Num3) {
+	cout << "The Sum OF Number = " << calcSum(Num1,Num2,Num3);
+}
+
+
+int main() {
+	int Num1; int Num2; int Num3;
+	ReadNumber(Num1, Num2, Num3);
+	PrintTheValue(Num1, Num2, Num3);
+}
