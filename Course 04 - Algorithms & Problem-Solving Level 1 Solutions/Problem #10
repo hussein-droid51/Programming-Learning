@@ -1,0 +1,74 @@
+#include <iostream>
+#include<cmath>
+#include <string>
+using namespace std;
+void Read_Marks(int& Mark1, int& Mark2, int& Mark3)
+{
+	cout << "please enter the first mark?\n";
+	cin >> Mark1;
+	cout << "please enter the second mark?\n";
+	cin >> Mark2;
+	cout << "please enter the third  mark?\n";
+	cin >> Mark3;
+}
+int Sum_of_3_Marks(int Mark1, int Mark2, int Mark3)
+{
+	return Mark1 + Mark2 + Mark3;
+}
+float Average_of_3_Marks(int Mark1, int Mark2, int Mark3)
+{
+	return float(Sum_of_3_Marks(Mark1, Mark2, Mark3))/3;
+}
+void Print_Results(float Average)
+{
+	cout << "the average of the 3 numbers is: " << Average << endl;
+}
+int main()
+{
+	int Mark1 = 0, Mark2 = 0, Mark3 = 0;
+	Read_Marks(Mark1, Mark2, Mark3);
+	Print_Results(Average_of_3_Marks(Mark1, Mark2, Mark3));
+	return 0;
+
+}
+------------------------
+#include <iostream>
+#include<cmath>
+#include <string>
+using namespace std;
+struct St_3Marks
+{
+	int Mark1;
+	int Mark2;
+	int Mark3;
+};
+St_3Marks Read_Marks()
+{
+	St_3Marks _3Marks;
+	cout << "please enter the first mark?\n";
+	cin >> _3Marks.Mark1;
+	cout << "please enter the second mark?\n";
+	cin >> _3Marks.Mark2;
+	cout << "please enter the third mark?\n";
+	cin >> _3Marks.Mark3;
+
+	return _3Marks;
+}
+int Sum_of_3_Marks(St_3Marks _3Marks)
+{
+	return _3Marks.Mark1 + _3Marks.Mark2 + _3Marks.Mark3;
+}
+float Average_of_3_Marks(St_3Marks _3Marks)
+{
+	return float(Sum_of_3_Marks(_3Marks)) / 3;
+}
+void Print_Results(float Average)
+{
+	cout << "the average of the three marks is: " << Average << endl;
+}
+int main()
+{
+	Print_Results(Average_of_3_Marks(Read_Marks()));
+	return 0;
+
+}
