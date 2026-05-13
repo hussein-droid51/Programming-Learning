@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+void ReadNumbers(short& Num1,short& Num2)
+{
+    cout<<"Enter Number1?"<<endl;
+cin>>Num1;
+    cout<<"Enter Number2?"<<endl;
+cin>>Num2;
+}
+ void Swapp2Num(short& Num1,short& Num2)//return without return
+ {short temp;
+    cout<<"Your entered two numbers: "<<Num1<<" and "<<Num2<<endl; 
+    temp=Num1;
+    Num1=Num2;
+    Num2=temp;
+ }
+ void Print2SwappedNum(short Num1,short Num2)
+ {cout<<"Numbers after swapped : "<<Num1<<"\t"<<Num2<<endl;}
+int main() {
+short Num1,Num2;
+ReadNumbers(Num1,Num2);
+Swapp2Num(Num1,Num2);
+Print2SwappedNum(Num1,Num2);
+    return 0;
+}
