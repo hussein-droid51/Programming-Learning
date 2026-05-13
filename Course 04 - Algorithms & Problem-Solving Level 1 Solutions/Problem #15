@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+struct stRectangDetails {float length,width;};
+
+stRectangDetails ReadLWidth()
+{stRectangDetails rectang;
+    cout<<"Please enter the length of the rectangle?"<<endl;
+cin>>rectang.length;
+cout<<"Please enter the width of the rectangle?"<<endl;
+cin>>rectang.width;
+return rectang;
+}
+float CalculateArea(stRectangDetails LW)
+{
+return (float) LW.length*LW.width;
+}
+void PrintArea(float value)
+{
+    cout<<"The Area of the recatngle= "<<value<<endl;}
+
+int main() {
+    
+PrintArea(CalculateArea(ReadLWidth()));
+    return 0;
+}
